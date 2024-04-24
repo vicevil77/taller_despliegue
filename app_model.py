@@ -7,7 +7,7 @@ from sklearn.linear_model import Lasso
 from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import numpy as np
 
-root_path= "/home/vicevil/taller_despliegue"
+root_path= "/home/vicevil/taller_despliegue/"
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
