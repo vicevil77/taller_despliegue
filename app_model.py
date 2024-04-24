@@ -60,7 +60,7 @@ def retrain(): # Rutarlo al endpoint '/api/v1/retrain/', metodo GET
 def webhook():
     # Ruta al repositorio donde se realizará el pull
     path_repo = "https://github.com/vicevil77/taller_despliegue.git"
-    servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py' 
+    servidor_web = 'https://vicevil.pythonanywhere.com/var/www/vicevil_pythonanywhere_com_wsgi.py' 
 
     # Comprueba si la solicitud POST contiene datos JSON
     if request.is_json:
