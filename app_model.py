@@ -59,8 +59,8 @@ def retrain(): # Rutarlo al endpoint '/api/v1/retrain/', metodo GET
 @app.route('/webhook_2024', methods=['POST'])
 def webhook():
     # Ruta al repositorio donde se realizará el pull
-    path_repo = "https://github.com/vicevil77/taller_despliegue.git"
-    servidor_web = 'https://vicevil.pythonanywhere.com/var/www/vicevil_pythonanywhere_com_wsgi.py' 
+    path_repo = "/home/vicevil/taller_despliegue"
+    servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py' 
 
     # Comprueba si la solicitud POST contiene datos JSON
     if request.is_json:
@@ -79,7 +79,7 @@ def webhook():
 
             # Realiza un git pull en el repositorio
             try:
-                subprocess.run(['git', 'pull', clone_url], check=True)
+                subprocess.run(['git', 'pull'], check=True)
                 subprocess.run(['touch', servidor_web], check=True) # Trick to automatically reload PythonAnywhere WebServer
                 return jsonify({'message': f'Se realizó un git pull en el repositorio {repo_name}'}), 200
             except subprocess.CalledProcessError:
