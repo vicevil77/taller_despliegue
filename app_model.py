@@ -15,7 +15,7 @@ app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    return "Bienvenido a mi API del modelo advertising"
+    return  "<h1>Hello, World! This is a simple API for a ML model</h1>"
 
 @app.route('/api/v1/predict', methods= ['GET'])
 def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
